@@ -1,6 +1,6 @@
 const mongoose=require("mongoose");
-
-const kinkroomSchema=mongoose.Schema({
+const Schema=mongoose.Schema
+const kinkroomSchema=new Schema({
     maloaiphong:String,
     tenloaiphong:String
 })

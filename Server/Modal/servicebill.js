@@ -1,6 +1,9 @@
 
 const mongoose=require("mongoose");
-const serviceBillSchema=mongoose.Schema({
+const Schema=mongoose.Schema
+const serviceBillSchema=new Schema({
+    masv:String,
+    madichvu:String,
     thoigiansudung:String,
     dongia:Number,
     thanhtien:Number,

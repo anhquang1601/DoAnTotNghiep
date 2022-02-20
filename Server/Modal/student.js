@@ -24,6 +24,9 @@ const studentSchema=new Schema({
     },
     doituongID:{
          type: Schema.Types.ObjectId, ref: 'priorityobjects' ,
+    },
+    roomId:{
+        type: Schema.Types.ObjectId, ref: 'rooms' ,
     }
 })
 

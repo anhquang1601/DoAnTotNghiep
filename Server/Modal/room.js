@@ -1,12 +1,13 @@
 
 const mongoose=require("mongoose");
-const roomSchema=mongoose.Schema({
+const Schema=mongoose.Schema
+const roomSchema=new Schema({
     maphong:String,
     tenphong:String,
     kinkroomID:{
         type: Schema.Types.ObjectId, ref: 'kinkroom'
     },
-    sinhvienID:[{ type: Schema.Types.ObjectId, ref: 'student'}]
+   /*  sinhvienID:[{ type: Schema.Types.ObjectId, ref: 'student'}] */
 })
 const kinkroomSchema=mongoose.Schema({
     maloaiphong:String,

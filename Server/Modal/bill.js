@@ -1,9 +1,11 @@
 const mongoose=require("mongoose");
-
-const billSchema=mongoose.Schema({
+const Schema=mongoose.Schema
+const billSchema=new Schema({
     thoigiantro:Date,
     sotienmotthang:Number,
     tongtien:Number,
+    masv:String,
+    maphong:String,
     sinhvienID:{
         type: Schema.Types.ObjectId, ref: 'student'
     },

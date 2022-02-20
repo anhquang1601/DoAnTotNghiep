@@ -21,5 +21,5 @@ const getpriority=async (req,res)=>{
         res.status(500).json({error:err})
     }
 }
-/*  module.exports=getpriority;  */
- module.exports=getpost; 
+  module.exports=getpriority;  
+/*  module.exports=getpost;  */

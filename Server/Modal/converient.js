@@ -1,6 +1,7 @@
 
 const mongoose=require("mongoose");
-const convenientSchema=mongoose.Schema({
+const Schema=mongoose.Schema;
+const convenientSchema=new Schema({
     matiennghi:String,
     tentiennghi:String
 })

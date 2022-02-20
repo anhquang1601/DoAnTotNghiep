@@ -3,6 +3,7 @@ const express=require('express');
 const bodyParser = require('body-parser');
 const mongoose=require('mongoose');
 const routerStudent=require("./Router/post")
+const routerSigin=require("./Router/Sigin")
 const getStudent=require("./Router/Get")
 const app=express();
 const cors = require('cors');
@@ -14,8 +15,9 @@ app.use(bodyParser.json({limit:'30mb'}));
 app.use(bodyParser.urlencoded({extended:true,limit:'30mb'}));
 app.use(cors());
 
-app.use('/post',routerStudent)
-app.use('/get',getStudent)
+app.use('/post',routerStudent);
+app.use("/post",routerSigin);
+app.use('/get',getStudent);
 mongoose.connect(utl,{useNewUrlParser:true,useUnifiedTopology:true})
 .then(()=>{
   console.log('connectted to db');

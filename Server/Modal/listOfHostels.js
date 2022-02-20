@@ -1,6 +1,9 @@
 
 const mongoose=require("mongoose");
-const listOfHostelsSchema=mongoose.Schema({
+const Schema=mongoose.Schema;
+const listOfHostelsSchema=new Schema({
+    maphong:String,
+    makhach:String,
     thoigianden:Date,
     thoigiandi:Date,
     phongID:{
