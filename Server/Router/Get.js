@@ -1,22 +1,20 @@
 const express =require('express');
 const router=express.Router();
-const getpost=require('../Controller/Get.js');
-const getPriority1=require("../Controller/Get")
-router.get('/',getpost); 
-router.get('/get',getPriority1);
+/* const getpost=require('../Controller/Get.js');
+const getPriority1=require("../Controller/Get"); */
+const middlewareController=require("../Controller/middlewareController")
+const getController= require("../Controller/Get")
+
+/* router.get('/',getpost); 
+router.get('/get',getPriority1); */
+router.get('/getStudent',getController.getStudent)
+router.get("/getBillRoom",getController.getBillRoom)
+router.get("/getServiceBill",getController.getServiceBill)
+
 var jwt = require('jsonwebtoken');
-router.get("/privite/:ID",(req,res,next)=>{
-    
-    try{
-        var token=req.params.ID;
-        var ketqua=jwt.verify(token,'mk')
-        if(ketqua){
-            next();
-        }
-    }catch(err){
-        return res.json({"error server":err})
-    }
-},(req,res,next)=>{
+const postController = require('../Controller/Post');
+router.get("/kindroom", middlewareController.veryfyToken,getController.getKindRoom)
+router.get("/privite", middlewareController.veryfyToken, (req,res,next)=>{
     res.json("welcome")
 })
 module.exports=router;

@@ -9,10 +9,7 @@ const roomSchema=new Schema({
     },
    /*  sinhvienID:[{ type: Schema.Types.ObjectId, ref: 'student'}] */
 })
-const kinkroomSchema=mongoose.Schema({
-    maloaiphong:String,
-    tenloaiphong:String
-})
+
 
 const room=mongoose.model('room',roomSchema); 
 

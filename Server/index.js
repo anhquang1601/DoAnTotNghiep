@@ -5,6 +5,8 @@ const mongoose=require('mongoose');
 const routerStudent=require("./Router/post")
 const routerSigin=require("./Router/Sigin")
 const getStudent=require("./Router/Get")
+const deleteR=require("./Router/Delete")
+const update=require("./Router/Update")
 const app=express();
 const cors = require('cors');
 /* const mongose=require('mongoose'); */
@@ -18,6 +20,8 @@ app.use(cors());
 app.use('/post',routerStudent);
 app.use("/post",routerSigin);
 app.use('/get',getStudent);
+app.use('/delete',deleteR);
+app.use("/update",update)
 mongoose.connect(utl,{useNewUrlParser:true,useUnifiedTopology:true})
 .then(()=>{
   console.log('connectted to db');
